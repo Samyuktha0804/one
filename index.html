@@ -3,41 +3,26 @@
         <title>SAM FORM</title>
     </head>
     <body>
-<div class="card mx-auto" style="width: 18rem;">
-      <div class="card-body">
-        <form name="submit-to-google-sheet">
-          <div class="mb-3">
-            <input name="name" type="text" class="form-control" placeholder="name" required>
-          </div>
-          <div class="mb-3">
-            <input name="ph" type="text" class="form-control" placeholder="Phone Number" required>
-          </div>
-          <div class="mb-3">
-            <input name="email" type="number" class="form-control" placeholder="mail" required>
-          </div>
-            <div class="mb-3">
-            <input name="message" type="number" class="form-control" placeholder="message" required>
-          </div>
-
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwmOz7iiTc20fG45dg-iZv5fOv_gS_c5SU1mjUdxBIClNAba22DlpKcJiWJGuviBdw/exec'
-    const form = document.forms['submit-to-google-sheet']
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => {
-          console.log('Success!', response);
-          alert('Data is Saved'); // Show a popup
-          location.reload(); // Refresh the page
-        })
-        .catch(error => console.error('Error!', error.message))
-    });
-  </script>
+        <FORM action="action.php" method="post" name="google form">
+            <label>NAME:</label>
+            <input type="text" name="NAME"><BR><BR>
+            <label>PHONE NUMBER:</label>
+            <input type="number" name="PHONE NUMBER"><BR><BR>
+            <label>EMAIL:</label>
+            <input type="email" name="EMAIL"><BR><BR>
+            <label>MESSAGE:</label>
+            <input type="text" name="MESSAGE"><BR><BR>
+        <div><center><input type="submit" class="submit" value="Submit" /></center></div>
+        </FORM>
+        <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwmOz7iiTc20fG45dg-iZv5fOv_gS_c5SU1mjUdxBIClNAba22DlpKcJiWJGuviBdw/exec'
+        const form = document.forms['submit-to-google-sheet']
+form.addEventListener('submit', e => {
+e.preventDefault()
+fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+.then(response => console.log('Success!', response))
+.catch(error => console.error('Error!', error.message))
+})
+</script>
     </body>
 </html>    
