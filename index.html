@@ -3,17 +3,26 @@
         <title>SAM FORM</title>
     </head>
     <body>
-        <FORM action="action.php" method="post" name="submit-to-google-sheet">
-            <label>NAME:</label>
-            <input type="text" name="name"><BR><BR>
-            <label>PHONE NUMBER:</label>
-            <input type="number" name="Ph"><BR><BR>
-            <label>EMAIL:</label>
-            <input type="email" name="email"><BR><BR>
-            <label>MESSAGE:</label>
-            <input type="text" name="message"><BR><BR>
+<div class="card mx-auto" style="width: 18rem;">
+      <div class="card-body">
+        <form name="submit-to-google-sheet">
+          <div class="mb-3">
+            <input name="name" type="text" class="form-control" placeholder="name" required>
+          </div>
+          <div class="mb-3">
+            <input name="ph" type="text" class="form-control" placeholder="Phone Number" required>
+          </div>
+          <div class="mb-3">
+            <input name="email" type="number" class="form-control" placeholder="mail" required>
+          </div>
+            <div class="mb-3">
+            <input name="message" type="number" class="form-control" placeholder="message" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        <div><center><input type="submit" class="submit" value="submit" /></center></div>
+      </div>
+    </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwmOz7iiTc20fG45dg-iZv5fOv_gS_c5SU1mjUdxBIClNAba22DlpKcJiWJGuviBdw/exec'
