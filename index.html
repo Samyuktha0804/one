@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>SAM FORM</title>
+    </head>
+    <body>
+        <FORM action="action.php" method="post" name="google form">
+            <label>NAME:</label>
+            <input type="text" name="NAME"><BR><BR>
+            <label>PHONE NUMBER:</label>
+            <input type="number" name="PHONE NUMBER"><BR><BR>
+            <label>EMAIL:</label>
+            <input type="email" name="EMAIL"><BR><BR>
+            <label>MESSAGE:</label>
+            <input type="text" name="MESSAGE"><BR><BR>
+        </form>
+        <div><center><input type="submit" class="submit" value="Submit" /></center></div>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwmOz7iiTc20fG45dg-iZv5fOv_gS_c5SU1mjUdxBIClNAba22DlpKcJiWJGuviBdw/exec'
+            const form = document.forms['submit-to-google-sheet']
+            form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+            })
+            </script>
+    </body>
+</html>    
