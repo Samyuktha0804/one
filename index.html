@@ -14,15 +14,21 @@
             <input type="text" name="MESSAGE"><BR><BR>
         <div><center><input type="submit" class="submit" value="Submit" /></center></div>
         </FORM>
-        <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwmOz7iiTc20fG45dg-iZv5fOv_gS_c5SU1mjUdxBIClNAba22DlpKcJiWJGuviBdw/exec'
-        const form = document.forms['submit-to-google-sheet']
-form.addEventListener('submit', e => {
-e.preventDefault()
-fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-.then(response => console.log('Success!', response))
-.catch(error => console.error('Error!', error.message))
-})
-</script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxT0quY7-3sX_4y-fBhR1upUeAl6vLJ9f_I9w9tuvCrIZ9eduLmiQFUvFZ3zzb2PGgw/exec'
+    const form = document.forms['submit-to-google-sheet']
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+          console.log('Success!', response);
+          alert('Data is Saved'); // Show a popup
+          location.reload(); // Refresh the page
+        })
+        .catch(error => console.error('Error!', error.message))
+    });
+  </script>
     </body>
 </html>    
